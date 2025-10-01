@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 
-function Comp2({ count, setUpdateCount }) {
+function Comp2({ count, setUpdateCount, selectedBreed }) {
   const [dogs, setDogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchDogs = async () => {
     setLoading(true);
     try {
-      const res = await fetch(
-        `https://dog.ceo/api/breeds/image/random/${count}`
-      );
+      let url;
+      if (selectedBreed === "all") {
+        url = `https://dog.ceo/api/breeds/image/random/${count}`;
+      } else {
+        url = `https://dog.ceo/api/breed/${selectedBreed}/images/random/${count}`;
+      }
+      const res = await fetch(url);
       const data = await res.json();
       if (data.status === "success") {
         setDogs(data.message);
@@ -21,9 +25,11 @@ function Comp2({ count, setUpdateCount }) {
     }
     setLoading(false);
   };
+
   useEffect(() => {
     fetchDogs();
-  }, []);
+  }, [selectedBreed]);
+
   const onUpdateClick = () => {
     fetchDogs();
     setUpdateCount((prev) => prev + 1);

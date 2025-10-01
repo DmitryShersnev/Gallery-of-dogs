@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 
-const Comp3 = ({ count, setCount }) => {
+const Comp3 = ({ setUpdateCount, selectedBreed, setSelectedBreed }) => {
   const [breeds, setBreeds] = useState({});
-  const [selectedBreed, setSelectedBreed] = useState("all");
-
   const onInputChange = (e) => {
     setSelectedBreed(e.target.value);
+    setUpdateCount((prev) => prev + 1);
   };
 
   const breedsList = async () => {
