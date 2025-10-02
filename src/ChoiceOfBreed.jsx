@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Comp3 = ({ setUpdateCount, selectedBreed, setSelectedBreed }) => {
+const ChoiceOfBreed = ({ setUpdateCount, selectedBreed, setSelectedBreed }) => {
   const [breeds, setBreeds] = useState({});
   const onInputChange = (e) => {
     setSelectedBreed(e.target.value);
@@ -44,4 +44,4 @@ const Comp3 = ({ setUpdateCount, selectedBreed, setSelectedBreed }) => {
   );
 };
 
-export default Comp3;
+export default ChoiceOfBreed;

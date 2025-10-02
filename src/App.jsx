@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-import Comp1 from "./Comp1";
-import Comp2 from "./Comp2";
-import Comp3 from "./Comp3";
+import SelectNumOfDogs from "./SelectNumOfDogs";
+import UploadImg from "./UploadImg";
+import ChoiceOfBreed from "./ChoiceOfBreed";
 
 function App() {
   const [count, setCount] = useState(3);
@@ -12,14 +12,14 @@ function App() {
     <>
       <h1>Галерея собак</h1>
       <p>Картинки обновлены {updateCount} раз(а)</p>
-      <Comp3
+      <ChoiceOfBreed
         selectedBreed={selectedBreed}
         setSelectedBreed={setSelectedBreed}
         setUpdateCount={setUpdateCount}
       />
       <br />
-      <Comp1 count={count} setCount={setCount} />
-      <Comp2
+      <SelectNumOfDogs count={count} setCount={setCount} />
+      <UploadImg
         count={count}
         setUpdateCount={setUpdateCount}
         selectedBreed={selectedBreed}

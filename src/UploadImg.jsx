@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Comp2({ count, setUpdateCount, selectedBreed }) {
+function UploadImg({ count, setUpdateCount, selectedBreed }) {
   const [dogs, setDogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -62,4 +62,4 @@ function Comp2({ count, setUpdateCount, selectedBreed }) {
   );
 }
 
-export default Comp2;
+export default UploadImg;

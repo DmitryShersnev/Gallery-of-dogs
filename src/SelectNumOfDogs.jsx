@@ -1,4 +1,4 @@
-const Comp1 = ({ count, setCount }) => {
+const SelectNumOfDogs = ({ count, setCount }) => {
   const onInputChange = (e) => {
     setCount(e.target.value);
   };
@@ -17,4 +17,4 @@ const Comp1 = ({ count, setCount }) => {
   );
 };
 
-export default Comp1;
+export default SelectNumOfDogs;
